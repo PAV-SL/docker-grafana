@@ -1,0 +1,20 @@
+version: "2"
+
+services:
+  grafana:
+    image: grafana/grafana:7.4.3
+    ports:
+      - 3000:3000
+    networks:
+      - devnet
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
+networks:
+  devnet:
+    external:
+      name: devnet
+volumes: 
+  grafana-storage:
+#     external: 
+#       name: grafana-storage
